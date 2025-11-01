@@ -1,3 +1,2 @@
-const name=require('./data')
-//console.log(name)
-console.log('End the code')
+const importsData=require('./data')
+console.log(importsData)
