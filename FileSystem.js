@@ -3,10 +3,16 @@
 const fs=require('fs')
 
 //Create The Folder
-fs.mkdir('./FileSystemFolder',(err)=>{
+if(! fs.existsSync('./FileSystemFolder')){
+    fs.mkdir('./FileSystemFolder',(err)=>{
     if(err){
-        console.log('Folder not created')
+        console.log(err.message)
     }
-    console.log('Folder Created')
+    else{
+      console.log('Folder Created')
+    }
+    
+   
 })
-
+   console.log('mkdir is async function')
+}
