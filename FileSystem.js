@@ -20,21 +20,42 @@ if(! fs.existsSync('./FileSystemFolder')){
 
 //Create the File
 
-fs.writeFile('./FileSystemFolder/file1.txt','Try to create the file',(err)=>{
-    if(err){
-        console.log(err.message)
-    }
-    else{
-        console.log('File Created')
-    }
-})
+// fs.writeFile('./FileSystemFolder/file1.txt','Try to create the file',(err)=>{
+//     if(err){
+//         console.log(err.message)
+//     }
+//     else{
+//         console.log('File Created')
+//     }
+// })
 
 //Read the File
-fs.readFile('./FileSystemFolder/file1.txt',(err,data)=>{
+// if (fs.existsSync('./FileSystemFolder/file1.txt')){
+//     fs.readFile('./FileSystemFolder/file1.txt',(err,data)=>{
+//     if(err){
+//         console.log(err.message)
+//     }
+//     else{
+//         console.log(data.toString())
+//     }
+// })
+// }
+
+//Delete The File
+if(fs.existsSync('./FileSystemFolder/file1.txt')){
+    fs.unlink('./FileSystemFolder/file1.txt',(err)=>{
+        if(err){
+            console.log(err.message)
+        }
+        else{
+            console.log('File Deleted')
+        }
+    })
+}
+
+fs.rmdir('./FileSystemFolder',(err)=>{
     if(err){
         console.log(err.message)
     }
-    else{
-        console.log(data.toString())
-    }
+    console.log('Folder Deleted')
 })
