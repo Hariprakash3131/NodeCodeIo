@@ -1,6 +1,13 @@
 const http=require('http')
 const server=http.createServer((req,res)=>{
     console.log('Request Mode')
+    console.log(req.url)
+    console.log(req.method)
+
+    res.setHeader('content-type','dummy/just for create')
+    res.write('Welcome James')
+    res.write('Thank you')
+    res.end()
 })
 
 server.listen(3000,'localhost',()=>{
