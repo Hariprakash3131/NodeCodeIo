@@ -7,9 +7,10 @@ const server=http.createServer((req,res)=>{
         if(err)
         {
             console.log(err.message)
+            res.end()
         }
         else{
-            res.write(data)
+            res.write(data)  // its another method res.end(data)
             res.end()
         }
     })
