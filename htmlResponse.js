@@ -18,6 +18,7 @@ const server=http.createServer((req,res)=>{
     }
     else{
         path+='notFound.html'
+        res.statusCode=404;
     }
 
     fs.readFile(path,(err,data)=>{
