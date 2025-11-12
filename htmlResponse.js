@@ -7,8 +7,13 @@ const server=http.createServer((req,res)=>{
     console.log(req.url)
     let path='./Dummy/';
 
-    if (req.url=='/home'|| req.url=='/'){
+    if (req.url=='/'){
         path+='index.html'
+    }
+    else if(req.url=='/home'){
+        res.statusCode=301;
+        res.setHeader('Location','/')
+        res.end()
     }
     else if(req.url=='/about'){
         path+='about.html'
