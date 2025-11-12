@@ -11,7 +11,7 @@ const server=http.createServer((req,res)=>{
         path+='index.html'
     }
     else if(req.url=='/home'){
-        res.statusCode=301;
+        res.statusCode=301;   // if redirect must add statuscode
         res.setHeader('Location','/')
         res.end()
     }
