@@ -5,8 +5,9 @@ const server=http.createServer((req,res)=>{
 
     res.setHeader('content-type','text/html')
     console.log(req.url)
-    let path='./Dummy/'
-    if (req.url=='/home'|| '/'){
+    let path='./Dummy/';
+
+    if (req.url=='/home'|| req.url=='/'){
         path+='index.html'
     }
     else if(req.url=='/about'){
@@ -18,6 +19,7 @@ const server=http.createServer((req,res)=>{
     else{
         path+='notFound.html'
     }
+
     fs.readFile(path,(err,data)=>{
         if(err)
         {
@@ -25,8 +27,8 @@ const server=http.createServer((req,res)=>{
             res.end()
         }
         else{
-            res.write(data)  // its another method res.end(data)
-            res.end()
+            // res.write(data)  // its another method res.end(data)
+            res.end(data)
         }
     })
 
