@@ -1,11 +1,11 @@
-const exp=require('express')
-const app=exp()
+// const exp=require('express')
+// const app=exp()
 
-app.listen(5000)
+// app.listen(5000)
 
-app.get('/',(req,res)=>{
-    res.send("James")
-})
+// app.get('/',(req,res)=>{
+//     res.send("James")
+// })
 
 
 const exp=require('express')
