@@ -1,0 +1,1 @@
+// Browser -> Request -> Server(MiddleWare) -> Response -> Browser
