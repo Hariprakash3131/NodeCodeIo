@@ -32,3 +32,11 @@ app.get('/about',(req,res)=>{
 app.get('/contact',(req,res)=>{
     res.sendFile('./contact.html',{root:__dirname})
 })
+
+app.get('/about1',(req,res)=>{   //This is use to Redirect
+    res.redirect('about')
+})
+
+app.use((req,res)=>{  // Maximum this use method use to last 
+    res.sendFile('./notFound.html',{root:__dirname})
+})  
